@@ -133,3 +133,4 @@
 /.composer
 /.node-gyp
 /.oh-my-zsh
+/scripts/*.log
