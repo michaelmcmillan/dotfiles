@@ -134,3 +134,4 @@
 /.node-gyp
 /.oh-my-zsh
 /scripts/*.log
+/.oracle_jre_usage/
