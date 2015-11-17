@@ -23,7 +23,7 @@ export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
 # Use vim as the editor
-export EDITOR=vi
+export EDITOR=vim
 set -o emacs
 
 # Aliases
