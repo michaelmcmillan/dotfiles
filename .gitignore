@@ -136,3 +136,4 @@
 /scripts/*.log
 /.oracle_jre_usage/
 bin/score_watcher.py
+Katas/
