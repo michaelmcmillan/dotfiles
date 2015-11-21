@@ -137,3 +137,4 @@
 /.oracle_jre_usage/
 bin/score_watcher.py
 Katas/
+.gnuplot_history
