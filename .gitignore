@@ -140,3 +140,4 @@ Katas/
 .gnuplot_history
 .electron/
 .anyconnect
+bin/score
