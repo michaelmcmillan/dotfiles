@@ -139,3 +139,4 @@ bin/score_watcher.py
 Katas/
 .gnuplot_history
 .electron/
+.anyconnect
