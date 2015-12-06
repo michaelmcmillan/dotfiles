@@ -23,6 +23,10 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " let the mouse resize splits
 set mouse=n
 
+" comment and un-comment n lines
+let @c="I#\ej"
+let @u="^xj"
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
