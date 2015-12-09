@@ -76,7 +76,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-:set wildignore+=.git,node_modules,node_modules/*,__init__.py,*.pyc,*.swp,*.png,*.jpg,*.gif,*.DS_Store
+:set wildignore+=venv,.git,node_modules,node_modules/*,__init__.py,*.pyc,*.swp,*.png,*.jpg,*.gif,*.DS_Store
 
 let mapleader=","
 
