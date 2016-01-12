@@ -1,0 +1,11 @@
+if [ -e Makefile ]; then
+   make lint
+elif [ -e ../Makefile ]; then
+    (cd ../ && make lint)
+elif [ -e ../../Makefile ]; then
+    (cd ../../ && make lint)
+elif [ -e ../../../Makefile ]; then
+    (cd ../../../ && make lint)
+elif [ -e ../../../../Makefile ]; then
+    (cd ../../../../ && make lint)
+fi
