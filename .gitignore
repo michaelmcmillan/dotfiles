@@ -141,3 +141,4 @@ Katas/
 .electron/
 .anyconnect
 bin/score
+.pylint.d
