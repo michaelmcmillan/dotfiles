@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Change directory into a course
+function emne () {
+    CODE=$(echo $1 | awk '{print toupper($0)}')
+    cd "$(find ~/Google\ Drive/NTNU/ -name "$CODE*" | head -1)" 
+}

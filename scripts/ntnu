@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Looks up a NTNU username
+function ntnu () {
+    ssh michaedm@login.stud.ntnu.no "ldapsearch -h at.ntnu.no -x uid=$1" | grep 'cn: ' | cut -d " " -f 2- | head -1 
+}
