@@ -1,0 +1,11 @@
+if [ -e Makefile ]; then
+   make integration-test
+elif [ -e ../Makefile ]; then
+    (cd ../ && make integration-test)
+elif [ -e ../../Makefile ]; then
+    (cd ../../ && make integration-test)
+elif [ -e ../../../Makefile ]; then
+    (cd ../../../ && make integration-test)
+elif [ -e ../../../../Makefile ]; then
+    (cd ../../../../ && make integration-test)
+fi
