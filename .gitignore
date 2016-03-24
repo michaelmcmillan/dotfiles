@@ -142,3 +142,8 @@ Katas/
 .anyconnect
 bin/score
 .pylint.d
+bin/mitmproxy
+bin/mitmdump
+.eclipse
+.p2
+git
