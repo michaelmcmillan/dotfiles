@@ -1,0 +1,4 @@
+# Scan for webservers on network
+#function scan_for_webservers () {
+arp -a | cut -d '(' -f2 | cut -d ')' -f1 | xargs curl --connect-timeout 2 -p 80 -v
+#}
