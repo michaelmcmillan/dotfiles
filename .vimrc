@@ -99,7 +99,7 @@ noremap <Right> <NOP>
 " set shellcmdflag=-ic
 
 " run test
-nnoremap <leader>T :!/Users/michaelmcmillan/bin/t<cr>
+nnoremap <leader>T :!/Users/michaelmcmillan/scripts/t<cr>
 
 " Restore cursor
 if has("autocmd")
