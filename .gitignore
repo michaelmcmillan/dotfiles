@@ -147,3 +147,5 @@ bin/mitmdump
 .eclipse
 .p2
 git
+.soapuios
+.netbeans-derby
