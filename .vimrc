@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set hlsearch
 set expandtab
 set tabstop=4
 set shiftwidth=4
