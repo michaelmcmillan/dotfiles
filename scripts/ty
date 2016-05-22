@@ -1,0 +1,11 @@
+if [ -e Makefile ]; then
+   make system-test
+elif [ -e ../Makefile ]; then
+    (cd ../ && make system-test)
+elif [ -e ../../Makefile ]; then
+    (cd ../../ && make system-test)
+elif [ -e ../../../Makefile ]; then
+    (cd ../../../ && make system-test)
+elif [ -e ../../../../Makefile ]; then
+    (cd ../../../../ && make system-test)
+fi

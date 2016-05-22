@@ -1,7 +1,3 @@
-
 #!/usr/bin/env bash
 # Launch irssi over ssh 
-function irc () {
-    ssh -t michael@littlist.no screen -Urd
-}
-
+ssh -t michael@littlist.no screen -Urd

@@ -1,13 +1,13 @@
 if [ -e Makefile ]; then
-   make test
+   make unit-test
 elif [ -e ../Makefile ]; then
-    (cd ../ && make test)
+    (cd ../ && make unit-test)
 elif [ -e ../../Makefile ]; then
-    (cd ../../ && make test)
+    (cd ../../ && make unit-test)
 elif [ -e ../../../Makefile ]; then
-    (cd ../../../ && make test)
+    (cd ../../../ && make unit-test)
 elif [ -e ../../../../Makefile ]; then
-    (cd ../../../../ && make test)
+    (cd ../../../../ && make unit-test)
 fi
 
 if [ -e package.json ]; then
