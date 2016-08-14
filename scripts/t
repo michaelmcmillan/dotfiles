@@ -9,15 +9,3 @@ elif [ -e ../../../Makefile ]; then
 elif [ -e ../../../../Makefile ]; then
     (cd ../../../../ && make unit-test)
 fi
-
-if [ -e package.json ]; then
-   npm test
-elif [ -e ../package.json ]; then
-    (cd ../ && npm test)
-elif [ -e ../../package.json ]; then
-    (cd ../../ && npm test)
-elif [ -e ../../../package.json ]; then
-    (cd ../../../ && npm test)
-elif [ -e ../../../../package.json ]; then
-    (cd ../../../../ && npm test)
-fi
