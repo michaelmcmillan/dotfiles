@@ -77,7 +77,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-:set wildignore+=src/bibliography/locales,src/bibliography/schema,src/bibliography/styles,venv,.git,node_modules,node_modules/*,__init__.py,*.pyc,*.swp,*.png,*.jpg,*.gif,*.DS_Store
+:set wildignore+=lib/redis,src/bibliography/locales,src/bibliography/schema,src/bibliography/styles,venv,.git,node_modules,node_modules/*,__init__.py,*.pyc,*.swp,*.png,*.jpg,*.gif,*.DS_Store
 
 let mapleader=","
 
@@ -118,3 +118,9 @@ let @a='i^Iit('', function (done) {});<80>kl<80>kl<80>kl^M^M<80>ku<80>ku<80>kr<8
 
 " rel line no
 set relativenumber
+
+" This little hack lets me resize vim splits inside tmux
+set mouse+=a
+if &term =~ '^screen'
+    set ttymouse=xterm2
+endif
