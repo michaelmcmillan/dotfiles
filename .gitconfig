@@ -20,6 +20,7 @@
     fa = fetch --all
     pom = push origin master
     b = branch
+    bd = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
     ds = diff --stat=160,120
     dh1 = diff HEAD~1
 
