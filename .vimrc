@@ -44,7 +44,8 @@ Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Swapped with selecta
+" Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -77,7 +78,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-:set wildignore+=lib/redis,src/bibliography/locales,src/bibliography/schema,src/bibliography/styles,venv,.git,node_modules,node_modules/*,__init__.py,*.pyc,*.swp,*.png,*.jpg,*.gif,*.DS_Store
+:set wildignore+=submissions,lib/env,lib/redis,src/bibliography/locales,src/bibliography/schema,src/bibliography/styles,venv,.git,node_modules,node_modules/*,__init__.py,*.pyc,*.swp,*.png,*.jpg,*.gif,*.DS_Store
 
 let mapleader=","
 
@@ -113,9 +114,6 @@ set backspace=2 " make backspace work like most other apps
 " Width 80
  autocmd FileType text setlocal textwidth=78
 
-" it-macro
-let @a='i^Iit('', function (done) {});<80>kl<80>kl<80>kl^M^M<80>ku<80>ku<80>kr<80>kr<80>kr<80>kr<80>kr^['
-
 " rel line no
 set relativenumber
 
@@ -124,3 +122,28 @@ set mouse+=a
 if &term =~ '^screen'
     set ttymouse=xterm2
 endif
+
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+    redraw!
+    return
+  endtry
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+" let find_command = "find * -type f"
+" let find_command = "find $(git rev-parse --show-toplevel) -name '.git' -prune -o  -type f"
+"
+" Filter out .git and virtualenv dirs. Then reduce the long paths by replacing
+" pwd with nothing so that the path is converted from abspath to relpath.
+let find_command = "find $(git rev-parse --show-toplevel) -name '.git' -prune -o  -name 'env' -prune -o -type f | sed 's?'`pwd`/'??'"
+nnoremap <leader>t :call SelectaCommand(find_command, "", ":e")<cr>
